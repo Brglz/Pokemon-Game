@@ -1,0 +1,597 @@
+/*! modern-normalize v0.7.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/*
+Document
+========
+*/
+/**
+Use a better box model (opinionated).
+*/
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/**
+Use a more readable tab size (opinionated).
+*/
+:root {
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+}
+
+/**
+1. Correct the line height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+*/
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/*
+Sections
+========
+*/
+/**
+Remove the margin in all browsers.
+*/
+body {
+  margin: 0;
+}
+
+/**
+Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+*/
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/*
+Grouping content
+================
+*/
+/**
+Add the correct height in Firefox.
+*/
+hr {
+  height: 0;
+}
+
+/*
+Text-level semantics
+====================
+*/
+/**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr[title] {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+b, strong {
+  font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+code, kbd, samp, pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+Forms
+=====
+*/
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+Remove the inheritance of text transform in Edge and Firefox.
+1. Remove the inheritance of text transform in Firefox.
+*/
+button, select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+button, [type='button'], [type='reset'], [type='submit'] {
+  -webkit-appearance: button;
+}
+
+/**
+Remove the inner border and padding in Firefox.
+*/
+button::-moz-focus-inner, [type='button']::-moz-focus-inner, [type='reset']::-moz-focus-inner, [type='submit']::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+Restore the focus styles unset by the previous rule.
+*/
+button:-moz-focusring, [type='button']:-moz-focusring, [type='reset']:-moz-focusring, [type='submit']:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+legend {
+  padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+[type='number']::-webkit-inner-spin-button, [type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+
+html, * {
+  font-family: 'Lato', sans-serif;
+}
+
+a, button {
+  font-style: normal;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+a {
+  font-weight: 600;
+}
+
+p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+button {
+  font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+h4 {
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+body .main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+}
+
+body .main .battlefield {
+  width: 1025px;
+  height: 580px;
+  background-image: url("/assets/Images/background.jpg");
+  background-repeat: no-repeat;
+  margin: 0;
+  position: relative;
+}
+
+body .main .battlefield .damage-output {
+  position: absolute;
+  top: 20%;
+  left: 42%;
+  font-size: 30px;
+  opacity: 0;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+body .main .battlefield .enemy {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: none;
+}
+
+body .main .battlefield .enemy-health {
+  width: 300px;
+  border: 1px solid white;
+}
+
+body .main .battlefield .enemy-name {
+  font-size: 18px;
+  font-weight: 600;
+  display: inline;
+  margin-right: 15px;
+  text-transform: uppercase;
+}
+
+body .main .battlefield .enemy-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+body .main .battlefield .enemy-controls .defend {
+  display: none;
+  background-color: orangered;
+  border-radius: 4px;
+  border: solid 1px white;
+  color: black;
+  font-size: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+body .main .battlefield .player {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: none;
+}
+
+body .main .battlefield .player-health {
+  width: 300px;
+  border: 1px solid white;
+}
+
+body .main .battlefield .player-name {
+  font-size: 18px;
+  font-weight: 600;
+  display: inline;
+  margin-right: 15px;
+  text-transform: uppercase;
+}
+
+body .main .battlefield .player-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+body .main .battlefield .player-controls .attack {
+  display: none;
+  background-color: greenyellow;
+  border-radius: 4px;
+  border: solid 1px white;
+  color: black;
+  font-size: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+body .main .more-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .main .more-info .play-button {
+  display: none;
+  width: 100px;
+  height: 50px;
+}
+
+body .characters {
+  width: 100%;
+  padding: 25px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  row-gap: 10px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+body .characters .character {
+  width: 200px;
+  height: 280px;
+  font-size: 12px;
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+body .characters .character .info {
+  -webkit-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  opacity: 0;
+}
+
+body .characters .character .info .pick {
+  position: absolute;
+  bottom: -5px;
+  right: -25px;
+  background-color: salmon;
+  border: 1px solid white;
+  border-radius: 5px;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+body .characters .character .info .pick:hover {
+  background-color: lightgreen;
+}
+
+body .characters .character img {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+
+body .characters .character p {
+  font-size: 16px;
+  margin: 0;
+}
+
+body .characters .character:hover img {
+  opacity: 0;
+}
+
+body .characters .character:hover .info {
+  opacity: 1;
+}
+
+body .characters .greeting {
+  margin: 30px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+body button {
+  width: 100px;
+}
+
+.red {
+  background-color: red;
+  color: red;
+  width: 300px;
+  border: 1px solid white;
+}
+
+.red[value] {
+  color: red;
+}
+
+/* IE10 */
+.red::-webkit-progress-bar-value {
+  background-color: red;
+}
+
+.red::-webkit-progress-value {
+  background-color: red;
+}
+
+.red::-moz-progress-bar {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+  color: yellow;
+  width: 300px;
+  border: 1px solid white;
+}
+
+.yellow[value] {
+  color: yellow;
+}
+
+/* IE10 */
+.yellow::-webkit-progress-bar-value {
+  background-color: yellow;
+}
+
+.yellow::-webkit-progress-value {
+  background-color: yellow;
+}
+
+.yellow::-moz-progress-bar {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+  color: green;
+  width: 300px;
+  border: 1px solid white;
+}
+
+.green[value] {
+  color: green;
+}
+
+/* IE10 */
+.green::-webkit-progress-bar-value {
+  background-color: green;
+}
+
+.green::-webkit-progress-value {
+  background-color: green;
+}
+
+.green::-moz-progress-bar {
+  background-color: green;
+}
+/*# sourceMappingURL=styles.css.map */

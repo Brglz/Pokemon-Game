@@ -1,0 +1,222 @@
+body {
+
+    .main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        .battlefield {
+            width: 1025px;
+            height: 580px;
+            background-image: url('/assets/Images/background.jpg');
+            background-repeat: no-repeat;
+            margin: 0;
+            position: relative;
+
+            .damage-output {
+                position: absolute;
+                top: 20%;
+                left: 42%;
+                font-size: 30px;
+                opacity: 0;
+                transition: .5s ease-in-out;
+            }
+
+            .enemy {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                display: none;
+
+                &-health {
+                    width: 300px;
+                    border: 1px solid white;                    
+                }
+
+                &-name {
+                    font-size: 18px;
+                    font-weight: 600;
+                    display: inline;
+                    margin-right: 15px;
+                    text-transform: uppercase;
+                }
+
+                &-controls {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 20px;
+
+                    .defend {
+                        display: none;
+                        background-color: orangered;
+                        border-radius: 4px;
+                        border: solid 1px white;
+                        color: black;
+                        font-size: 20px;
+                        padding: 10px 15px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .player {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                display: none;
+                
+                &-health {
+                    width: 300px;
+                    border: 1px solid white;
+                }
+
+                &-name {
+                    font-size: 18px;
+                    font-weight: 600;
+                    display: inline;
+                    margin-right: 15px;
+                    text-transform: uppercase;
+                }
+
+                &-controls {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 20px;
+
+                    .attack {
+                        display: none;
+                        background-color: greenyellow;
+                        border-radius: 4px;
+                        border: solid 1px white;
+                        color: black;
+                        font-size: 20px;
+                        padding: 10px 15px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .more-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .play-button {
+                display: none;
+                width: 100px;
+                height: 50px;
+            }
+        }
+    }
+
+
+    .characters {
+        width: 100%;
+        padding: 25px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+        row-gap: 10px;
+        column-gap: 10px;
+
+        .character {
+            width: 200px;
+            height: 280px;
+            font-size: 12px;
+            background-color: lightgray;
+            border-radius: 5px;
+            padding: 5px;
+            position: relative;
+            cursor: pointer;
+
+            .info {
+                transition: opacity .3s ease-in-out;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                opacity: 0;
+
+                .pick {
+                    position: absolute;
+                    bottom: -5px;
+                    right: -25px;
+                    background-color: salmon;
+                    border: 1px solid white;
+                    border-radius: 5px;
+                    transition: .3s ease-in-out;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: lightgreen;
+                    }
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+                transition: opacity .3s ease-in-out;
+            }
+
+            p {
+                font-size: 16px;
+                margin: 0;
+            }
+
+            &:hover img {
+                opacity: 0;
+            }
+
+            &:hover .info {
+                opacity: 1;
+            }
+        }
+
+        .greeting {
+            margin: 30px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    button {
+        width: 100px;
+    }
+
+}
+
+.red {
+    background-color: red;
+    color: red;
+    width: 300px;
+    border: 1px solid white;
+}
+.red[value] {color:red} /* IE10 */
+.red::-webkit-progress-bar-value {background-color:red}
+.red::-webkit-progress-value {background-color:red}
+.red::-moz-progress-bar {background-color:red}
+
+
+.yellow {
+    background-color: yellow;
+    color: yellow;
+    width: 300px;
+    border: 1px solid white;
+}
+.yellow[value] {color:yellow} /* IE10 */
+.yellow::-webkit-progress-bar-value {background-color:yellow}
+.yellow::-webkit-progress-value {background-color:yellow}
+.yellow::-moz-progress-bar {background-color:yellow}
+
+.green {
+    background-color: green;
+    color: green;
+    width: 300px;
+    border: 1px solid white;
+}
+.green[value] {color:green} /* IE10 */
+.green::-webkit-progress-bar-value {background-color:green}
+.green::-webkit-progress-value {background-color:green}
+.green::-moz-progress-bar {background-color:green}

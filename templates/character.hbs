@@ -1,0 +1,23 @@
+{{#with this}}
+<div class="character">
+    <img src="{{frontImg}}" alt="">
+    <div class="info">
+        <p>Name: {{name}} </p>
+        <p>Ability: {{ability}}</p>
+        <p>Moves:</p>
+        <ul>
+            {{#each moves}}
+            {{>move}}
+            {{/each}}
+        </ul>
+        <p>Speed: {{speed}}</p>
+        <p> Special Defense: {{sDefense}}</p>
+        <p>Special Attack: {{sAttack}}</p>
+        <p>Defense: {{defense}}</p>
+        <p>Attack: {{attack}}</p>
+        <p>HP: {{hp}}</p>
+        <button class="pick">Pick me</button>
+
+    </div>
+</div>
+{{/with}}
