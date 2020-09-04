@@ -7,19 +7,6 @@ class Player {
         this.speed = speed;
         this.img = img;
     }
-
-    render() {
-
-    }
-
-    createPlayers(player, enemy) {
-
-    }
-
-    movePlayer(player, direction) {
-
-    }
-
 }
 
 let gameOver = false;
@@ -101,7 +88,7 @@ window.onload = function () {
                 enemy = PIXI.Sprite.from(app.loader.resources[enemyInfo.name].texture);
                 enemy.x = 550;
                 enemy.y = 300;
-                enemy.anchor.set(0);
+                enemy.anchor.set(0, 0);
                 enemy.speed = 1;
                 enemy.alpha = 1;
 
@@ -110,15 +97,14 @@ window.onload = function () {
                 player.x = 420;
                 player.y = 400;
                 player.scale.set(playerScale, playerScale)
-                player.anchor.set(0);
+                player.anchor.set(0, 0);
                 player.speed = 1;
                 player.alpha = 1;
 
                 app.stage.addChild(player);
                 app.stage.addChild(enemy);
 
-
-                window.attack = async () => {
+                window.attack = () => {
                     let moved = false;
                     let moveUp = () => {
                         if (player.y == 329) {
@@ -130,9 +116,10 @@ window.onload = function () {
                         if (player.y >= enemy.y + 30) {
                             player.y--;
                             player.x++;
+                            console.log('moving Up');
+                            moved = false;
                         }
                     }
-
                     let countPlayer = 0;
                     let blink = () => {
                         if (countPlayer > 60) {
@@ -148,7 +135,6 @@ window.onload = function () {
                             app.ticker.remove(blink)
                         }
                     }
-
                     let moveDown = () => {
                         if (player.y < app.view.height / 2) {
                             app.ticker.remove(moveDown);
@@ -166,12 +152,13 @@ window.onload = function () {
                         }
                     }
 
-                    await app.ticker.add(moveUp);
-                    await app.ticker.add(blink)
-                    await app.ticker.add(moveDown);
+                    app.ticker.add(moveUp);
+                    app.ticker.speed = 2;
+                    app.ticker.add(blink)
+                    app.ticker.add(moveDown);
                 }
 
-                window.defend = async () => {
+                window.defend = () => {
                     let movedEnemy = false;
                     let moveUpEnemy = () => {
                         if (enemy.y == 300) {
@@ -216,9 +203,9 @@ window.onload = function () {
 
                         }
                     }
-                    await app.ticker.add(moveDownEnemy);
-                    await app.ticker.add(blinkEnemy)
-                    await app.ticker.add(moveUpEnemy);
+                    app.ticker.add(moveDownEnemy);
+                    app.ticker.add(blinkEnemy)
+                    app.ticker.add(moveUpEnemy);
                 }
 
                 elements.attackBtn.addEventListener('click', attacking);
@@ -235,7 +222,7 @@ window.onload = function () {
                 }
 
                 function attacking() {
-                    let randomNum = Math.floor(Math.random() * 200);
+                    let randomNum = Math.floor(Math.random() * 20); // This should be * 200 but the game ends in 1 round
                     let damage = Math.round((playerInfo.attack / enemyInfo.defense) * randomNum);
                     if (damage > 0) {
                         window.attack();
@@ -253,7 +240,9 @@ window.onload = function () {
                         }
 
                         if (elements.enemyHTML.lastElementChild.value <= 0) {
-                            elements.playButton.style.display = 'block';
+                            let showBtn = setTimeout(() => {
+                                elements.playButton.style.display = 'block';
+                            }, 2500);
                             elements.playButton.textContent = 'Play again!';
                             elements.attackBtn.style.display = 'none';
                             elements.defendBtn.style.display = 'none';
@@ -272,7 +261,7 @@ window.onload = function () {
                 }
 
                 function defending() {
-                    let randomNum = Math.floor(Math.random() * 200);
+                    let randomNum = Math.floor(Math.random() * 20); // This should be * 200 but the game ends in 1 round
                     let damage = Math.round((enemyInfo.attack / playerInfo.defense) * randomNum);
                     if (damage > 0) {
                         window.defend();
@@ -292,7 +281,9 @@ window.onload = function () {
 
                     }
                     if (elements.playerHTML.lastElementChild.value <= 0) {
-                        elements.playButton.style.display = 'block';
+                        let showBtn = setTimeout(() => {
+                            elements.playButton.style.display = 'block';
+                        }, 2500);
                         elements.playButton.textContent = 'Play again!';
                         elements.attackBtn.style.display = 'none';
                         elements.defendBtn.style.display = 'none';
